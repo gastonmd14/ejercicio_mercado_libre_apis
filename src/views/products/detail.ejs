@@ -2,6 +2,8 @@
 <html lang="es">
 <!-- Include Head -->
 <%- include('../partials/head', {title: product.name, image: product.image}) %>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/js/addItem.js"></script>
 <body>
 	<!-- Header -->
 	<%- include('../partials/headerNavbar') %>
@@ -60,7 +62,7 @@
 								<button type="submit" class="action-button delete">ELIMINAR</button>
 							</form>
 						<% } else { %>
-							<form action="/users/addToCart" method="POST" style="display: inline-bock">
+							<form id="add-item-toCart" action="/users/addToCart" method="POST" style="display: inline-bock">
 								<label for="quantity" style="font-size: 14px;">Cantidad</label>
 								<input type="number" style="font-size: 14px;" id="quantity" name="quantity" value="1">
 								<p class="error"><%= typeof errors == 'undefined' ? '' : errors.quantity ? errors.quantity.msg : '' %></p>

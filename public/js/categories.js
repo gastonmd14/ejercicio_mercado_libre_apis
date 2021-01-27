@@ -29,17 +29,27 @@ window.addEventListener("load", function () {
       });
     });
 
-//   fetch("http://localhost:3000/api/products/categories/:category")
-//     .then((response) => {
-//       return response.json();
-//     })
-//     .then((resultado) => {
-//       console.log(resultado);
-
-//       let hipervinculo = document.querySelectorAll('a')
-//       hipervinculo.addEventListener('click', function(e) {
-//         e.innerHTML = 
-//       })
+    
+    let hipervinculo = document.querySelectorAll('.product-detail-info a')
+     
+    //   console.log(hipervinculo);
+    //   console.log(hipervinculo.outerText);
+          
+       for(let i = 0; i < hipervinculo.length; i++) {
+                fetch('http://localhost:3000/api/products/categories/' + hipervinculo[i].outerText)
+                .then((response) => {
+                   return response.json()
+                })
+                .then((resultado) => {
+                  
+                   console.log(resultado.data);
+                
+                
+             })
+             
+       }
+            
       
-//     });
+               
+ 
 });

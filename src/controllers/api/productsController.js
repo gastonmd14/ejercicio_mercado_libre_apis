@@ -68,8 +68,7 @@ module.exports = {
 			
 		})
 		.then((resultado) => {
-			console.log(req.params);
-			console.log(resultado);
+			
 			for(let i = 0; i < resultado.length; i++) {
 				resultado[i].setDataValue('endpoint', '/api/products/categories/' + resultado[i].id)
 			}
@@ -99,8 +98,7 @@ module.exports = {
 			]
 		})
 		.then((resultado) => {
-			console.log(req.params);
-			console.log(resultado);
+			;
 			for(let i = 0; i < resultado.length; i++) {
 				resultado[i].setDataValue('endpoint', '/api/products/categories/' + resultado[i].categoryId)
 			}
