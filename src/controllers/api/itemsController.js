@@ -70,15 +70,17 @@ module.exports = {
     },
 
     destroy (req, res){
-        // PRUEBA
-        Item.findAll({
 
+        Item.destroy({
+            where: {
+                id: req.body.itemId
+            }
         })
             .then((result) => {
 
                 let respuesta = {
                     meta: {
-                        status: 201,
+                        status: 202,
                         total: result.length,
 					    url: '/api/items'
     

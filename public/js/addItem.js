@@ -16,21 +16,29 @@ window.addEventListener("load", function () {
         console.log(cantidad);
         console.log(producto);
 
-        axios('http://localhost:3000/api/items')
+        axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/items',         
+            data: {
+                quantity: cantidad,
+                productId: producto
+            }
+        })
             .then((result) => {
+                console.log(result);
                 console.log(result.status);
 
-               if(result.status == 201) {
-                   result.redirect('/users/cart')
+               if(result.data.meta.status == 201) {
+                   res.redirect('http://localhost:3000/users/cart')
 
                } else {
                    console.log('Hay un problema');
                }
 
+            })
 
-                
-                
-
+            .catch((error) => {
+                console.log(error);
             })
     })
 
