@@ -31,7 +31,7 @@ window.addEventListener("load", function () {
 
     
     let hipervinculo = document.querySelectorAll('.product-detail-info a')
-     
+    
    //   console.log(hipervinculo);
    //   console.log(hipervinculo.outerText);
          
@@ -51,6 +51,7 @@ window.addEventListener("load", function () {
 
                   let cambio1 = document.querySelector(".products-container");
                   
+                  cambio1.innerHTML = ``
                   
                   resultado.data.forEach((element) => {
                      console.log(element);
@@ -59,8 +60,10 @@ window.addEventListener("load", function () {
                   `<h1 class="products-title"> ${element.category.name} </h1>`
                   
                   let discount = element.discount > 0 ? `<span> ${element.discount} % OFF</span>` : "";
-
-                  cambio1.innerHTML = 
+                  
+                  
+                  
+                  cambio1.innerHTML += 
                   `<div class="col-12 col-sm-6 col-lg-4">
                         <section class="product-box">
                            <a href="/products/detail/${element.id} ">
